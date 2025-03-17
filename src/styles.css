@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+#gh-link {
+  color: gray;
+  font-size: .8rem;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #121212; /* Dark background */
@@ -15,7 +20,7 @@ body {
 .container {
   max-width: 600px;
   margin: 50px auto;
-  padding: 30px;
+  padding: 30px 30px 10px;
   background: #1e1e1e; /* Darker container background */
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
