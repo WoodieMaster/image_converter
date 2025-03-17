@@ -49,7 +49,7 @@ h1 {
   transition: background-color 0.3s, border-color 0.3s;
 }
 
-.upload-area:hover {
+.upload-area:hover, .upload-area.drag-over {
   background-color: #292929;
   border-color: #0088cc;
 }
