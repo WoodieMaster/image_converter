@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Conversion Tool</title>
+  <link rel="stylesheet" crossorigin href="/assets/index-DudfOnoL.css">
+</head>
+<body>
+<div class="container">
+    <h1>Image Conversion Tool</h1>
+    <p class="description">Convert any image type to another effortlessly! <br>Just set the output type, select all your
+        images, and done!</p>
+    <div class="upload-area" id="upload-area">
+        <p>Click or Drag & Drop to Upload Image</p>
+        <input type="file" id="file-input" multiple accept="image/*"/>
+    </div>
+    <div class="format-input">
+        <label for="output-format">Output Format:</label>
+        <input type="text" id="output-format" value="png" list="format-suggestions"/>
+        <datalist id="format-suggestions"></datalist>
+    </div>
+    <label class="toggle">
+        <input id="do-save" type="checkbox">
+        <span class="slider"></span>
+        <span class="text">Save</span>
+        <span class="help-icon">?</span>
+        <span class="tooltip">When save is enabled, all files will be directly saved to your computer.<br> When save is disabled all files will open in another tab</span>
+    </label>
+
+    <div id="image-previews"></div>
+
+</div>
+<script src="src/main.ts"></script>
+</body>
+</html>
