@@ -75,20 +75,33 @@ function convertFile(file: File) {
 	const outputFormat = outputFormatElement.value;
 
 	if (file.type === "image/" + outputFormat
-		&& !confirm("Original and target file-type look to be the same!\nContinue anyway?")
+		&& !confirm(`Original and target file-type look to be the same!(${file.name})\nContinue anyway?`)
 	) {
 		return;
 	}
 
 	img.src = URL.createObjectURL(file);
 
-	console.log(file.name);
 	img.onload = () => {
-		canvas.width = img.naturalWidth;
-		canvas.height = img.naturalHeight;
+		if(img.naturalWidth == 0) {
+			const width = prompt(`Enter width for ${file.name}:`)
+			if(width == null) return alert(`Could not convert image ${file.name}\nNo size`);
+			canvas.width = parseInt(width);
+		}else {
+			canvas.width = img.naturalWidth;
+		}
+		if(img.naturalHeight == 0) {
+			const width = prompt(`Enter width for ${file.name}:`)
+			if(width == null) return alert(`Could not convert image ${file.name}!\nNo size`);
+			canvas.height = parseInt(width);
+		}else {
+			canvas.height = img.naturalHeight;
+		}
 
-		ctx.drawImage(img, 0, 0);
+		ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+		console.log(canvas.height, canvas.width);
 		const img_url = canvas.toDataURL("image/" + outputFormat);
+		console.log(img_url, outputFormat)
 		downloadUrl(img_url, file.name);
 	}
 	img.onerror = () => {
